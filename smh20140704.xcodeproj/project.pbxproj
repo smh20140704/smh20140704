@@ -22,6 +22,8 @@
 		A42596BB196AD1E2004FABE1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A425969F196AD1E2004FABE1 /* CoreData.framework */; };
 		A42596C3196AD1E2004FABE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A42596C1196AD1E2004FABE1 /* InfoPlist.strings */; };
 		A42596C5196AD1E2004FABE1 /* smh20140704Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A42596C4196AD1E2004FABE1 /* smh20140704Tests.m */; };
+		A42596D2196AD471004FABE1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A42596D1196AD471004FABE1 /* Storyboard.storyboard */; };
+		A42596D4196AD4A0004FABE1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A42596D3196AD4A0004FABE1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		A42596C0196AD1E2004FABE1 /* smh20140704Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "smh20140704Tests-Info.plist"; sourceTree = "<group>"; };
 		A42596C2196AD1E2004FABE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A42596C4196AD1E2004FABE1 /* smh20140704Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = smh20140704Tests.m; sourceTree = "<group>"; };
+		A42596D1196AD471004FABE1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		A42596D3196AD4A0004FABE1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 		A425968D196AD1E2004FABE1 = {
 			isa = PBXGroup;
 			children = (
+				A42596D3196AD4A0004FABE1 /* README.md */,
 				A42596A1196AD1E2004FABE1 /* smh20140704 */,
 				A42596BE196AD1E2004FABE1 /* smh20140704Tests */,
 				A4259698196AD1E2004FABE1 /* Frameworks */,
@@ -115,10 +120,9 @@
 		A42596A1196AD1E2004FABE1 /* smh20140704 */ = {
 			isa = PBXGroup;
 			children = (
-				A42596AA196AD1E2004FABE1 /* SMHAppDelegate.h */,
-				A42596AB196AD1E2004FABE1 /* SMHAppDelegate.m */,
-				A42596B0196AD1E2004FABE1 /* Images.xcassets */,
-				A42596AD196AD1E2004FABE1 /* smh20140704.xcdatamodeld */,
+				A42596CE196AD444004FABE1 /* Controller */,
+				A42596CF196AD44E004FABE1 /* View */,
+				A42596D0196AD454004FABE1 /* Model */,
 				A42596A2196AD1E2004FABE1 /* Supporting Files */,
 			);
 			path = smh20140704;
@@ -151,6 +155,32 @@
 				A42596C1196AD1E2004FABE1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A42596CE196AD444004FABE1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A42596AA196AD1E2004FABE1 /* SMHAppDelegate.h */,
+				A42596AB196AD1E2004FABE1 /* SMHAppDelegate.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A42596CF196AD44E004FABE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A42596B0196AD1E2004FABE1 /* Images.xcassets */,
+				A42596D1196AD471004FABE1 /* Storyboard.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A42596D0196AD454004FABE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A42596AD196AD1E2004FABE1 /* smh20140704.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +261,8 @@
 			files = (
 				A42596A6196AD1E2004FABE1 /* InfoPlist.strings in Resources */,
 				A42596B1196AD1E2004FABE1 /* Images.xcassets in Resources */,
+				A42596D4196AD4A0004FABE1 /* README.md in Resources */,
+				A42596D2196AD471004FABE1 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
