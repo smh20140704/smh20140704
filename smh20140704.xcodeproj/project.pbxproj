@@ -26,6 +26,8 @@
 		A42596D4196AD4A0004FABE1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A42596D3196AD4A0004FABE1 /* README.md */; };
 		A47EB597196ADA5B008D279C /* SMHPropertiesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EB596196ADA5B008D279C /* SMHPropertiesTVC.m */; };
 		A47EB59A196ADA8B008D279C /* SMHPropertyDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EB599196ADA8B008D279C /* SMHPropertyDetailsVC.m */; };
+		A47EB59F196AE228008D279C /* SMHDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EB59E196AE228008D279C /* SMHDataController.m */; };
+		A47EB5A2196AE7C7008D279C /* SMHProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EB5A1196AE7C6008D279C /* SMHProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		A47EB596196ADA5B008D279C /* SMHPropertiesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHPropertiesTVC.m; sourceTree = "<group>"; };
 		A47EB598196ADA8B008D279C /* SMHPropertyDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHPropertyDetailsVC.h; sourceTree = "<group>"; };
 		A47EB599196ADA8B008D279C /* SMHPropertyDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHPropertyDetailsVC.m; sourceTree = "<group>"; };
+		A47EB59D196AE228008D279C /* SMHDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHDataController.h; sourceTree = "<group>"; };
+		A47EB59E196AE228008D279C /* SMHDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHDataController.m; sourceTree = "<group>"; };
+		A47EB5A0196AE7C6008D279C /* SMHProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMHProperty.h; sourceTree = "<group>"; };
+		A47EB5A1196AE7C6008D279C /* SMHProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMHProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		A42596A1196AD1E2004FABE1 /* smh20140704 */ = {
 			isa = PBXGroup;
 			children = (
+				A47EB59C196AE214008D279C /* Web */,
 				A42596CE196AD444004FABE1 /* Controller */,
 				A42596CF196AD44E004FABE1 /* View */,
 				A42596D0196AD454004FABE1 /* Model */,
@@ -189,8 +196,19 @@
 			isa = PBXGroup;
 			children = (
 				A42596AD196AD1E2004FABE1 /* smh20140704.xcdatamodeld */,
+				A47EB5A0196AE7C6008D279C /* SMHProperty.h */,
+				A47EB5A1196AE7C6008D279C /* SMHProperty.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A47EB59C196AE214008D279C /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				A47EB59D196AE228008D279C /* SMHDataController.h */,
+				A47EB59E196AE228008D279C /* SMHDataController.m */,
+			);
+			name = Web;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +311,8 @@
 			files = (
 				A42596AF196AD1E2004FABE1 /* smh20140704.xcdatamodeld in Sources */,
 				A42596A8196AD1E2004FABE1 /* main.m in Sources */,
+				A47EB5A2196AE7C7008D279C /* SMHProperty.m in Sources */,
+				A47EB59F196AE228008D279C /* SMHDataController.m in Sources */,
 				A47EB59A196ADA8B008D279C /* SMHPropertyDetailsVC.m in Sources */,
 				A42596AC196AD1E2004FABE1 /* SMHAppDelegate.m in Sources */,
 				A47EB597196ADA5B008D279C /* SMHPropertiesTVC.m in Sources */,

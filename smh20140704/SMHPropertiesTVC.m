@@ -7,12 +7,19 @@
 //
 
 #import "SMHPropertiesTVC.h"
+#import "SMHDataController.h"
 
 @interface SMHPropertiesTVC ()
+{
+    UIView *activityIndicatorView;
+}
+
+@property (strong, nonatomic) NSArray *properties;
 
 @end
 
 @implementation SMHPropertiesTVC
+@synthesize properties;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,18 +33,55 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showActivityIndicator];
+    SMHDataController *dataController = [SMHDataController sharedController];
+    [dataController fetchDataWithCompletionHandler:^void(NSArray *result){
+        properties = result;
+        [self.tableView reloadData];
+        [self removeActivityIndicator];
+    }];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Refresh control for pull-to-refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor redColor];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [refreshControl addTarget:self action:@selector(updateTable) forControlEvents:UIControlEventValueChanged];
+    
+    self.refreshControl = refreshControl;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)showActivityIndicator
+{
+    activityIndicatorView = [[UIView alloc] initWithFrame:self.view.frame];
+    [activityIndicatorView setBackgroundColor:[UIColor blackColor]];
+    [activityIndicatorView setAlpha:0.5];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-40, (self.view.frame.size.height/2)-40, 80, 80)];
+    [activityIndicatorView addSubview:spinner];
+    [spinner startAnimating];
+    [self.view addSubview:activityIndicatorView];
+}
+
+-(void)removeActivityIndicator
+{
+    [activityIndicatorView removeFromSuperview];
+    activityIndicatorView = nil;
+}
+
+-(void)updateTable
+{
+    SMHDataController *dataController = [SMHDataController sharedController];
+    [dataController fetchDataWithCompletionHandler:^void(NSArray *result){
+        properties = result;
+        // Core Data order is not online order so table needs refresh.
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -58,7 +102,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SMHPropertyCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SMHPropertiesTVCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
