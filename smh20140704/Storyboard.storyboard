@@ -27,7 +27,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="hostelworld" id="SBE-DV-p3E">
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="SMHPropertyPlaceholder" id="SBE-DV-p3E">
                                             <rect key="frame" x="15" y="0.0" width="87" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
@@ -101,7 +101,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hostelworld" width="160" height="160"/>
+        <image name="SMHPropertyPlaceholder" width="160" height="160"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

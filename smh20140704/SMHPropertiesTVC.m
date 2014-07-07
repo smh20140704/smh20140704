@@ -8,6 +8,7 @@
 
 #import "SMHPropertiesTVC.h"
 #import "SMHDataController.h"
+#import "SMHProperty.h"
 
 @interface SMHPropertiesTVC ()
 {
@@ -88,23 +89,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 5;
+    return [properties count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SMHPropertiesTVCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SMHPropertiesTVCell"];
     
     // Configure the cell...
+    SMHProperty *tempProperty = [properties objectAtIndex:indexPath.row];
+    [cell.textLabel setText:tempProperty.name];
+    [cell.imageView setImage:[UIImage imageNamed:@"SMHPropertyPlaceholder"]];
+    
+    if (tempProperty.image)
+    {
+        [cell.imageView setImage:tempProperty.image];
+    } else {
+        [tempProperty fetchImageWithCompletion:^{
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+    }
     
     return cell;
 }

@@ -17,5 +17,8 @@
 @property (nonatomic, retain) NSNumber * imageHeight;
 @property (nonatomic, retain) NSString * imageURL;
 @property (nonatomic, retain) NSString * shortDesc;
+@property (nonatomic, strong) UIImage *image;
+
+-(void)fetchImageWithCompletion:(void(^)())completion;
 
 @end

@@ -15,6 +15,7 @@ NSString *const SourceURL = @"http://www.gingermcninja.com/hw_test/propertylocat
 @interface SMHDataController ()
 {
     NSMutableArray *_result;
+    SMHProperty *_currentProperty;
     NSManagedObjectContext *_backgroundContext;
 }
 
@@ -97,6 +98,25 @@ NSString *const SourceURL = @"http://www.gingermcninja.com/hw_test/propertylocat
 
 -(void)parseData:(NSData *) data
 {
+    NSError *e = nil;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+    
+    if (!jsonDict) {
+        NSLog(@"Error parsing JSON: %@", e);
+    } else {
+        for(NSDictionary *item in jsonDict[@"result"][@"Properties"]) {
+            NSLog(@"Item: %@", item);
+            _currentProperty = [NSEntityDescription
+                                insertNewObjectForEntityForName:@"SMHProperty"
+                                inManagedObjectContext:_backgroundContext];
+            _currentProperty.name = item[@"name"];
+            _currentProperty.imageWidth = item[@"images"][0][@"width"];
+            _currentProperty.imageHeight = item[@"images"][0][@"height"];
+            _currentProperty.imageURL = item[@"images"][0][@"url"];
+            _currentProperty.shortDesc = item[@"shortDescription"];
+            [_result addObject:_currentProperty];
+        }
+    }
 }
 
 @end
