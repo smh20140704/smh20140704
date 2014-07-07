@@ -7,12 +7,17 @@
 //
 
 #import "SMHPropertyDetailsVC.h"
+#import "SMHProperty.h"
 
 @interface SMHPropertyDetailsVC ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *propertyImage;
+@property (weak, nonatomic) IBOutlet UITextView *propertyShortDesc;
 
 @end
 
 @implementation SMHPropertyDetailsVC
+@synthesize property, propertyImage, propertyShortDesc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSAssert(property, @"No property data");
+    [self.navigationItem setTitle:property.name];
+    [propertyImage setImage:property.image];
+    [propertyShortDesc setText:property.shortDesc];
 }
 
 - (void)didReceiveMemoryWarning

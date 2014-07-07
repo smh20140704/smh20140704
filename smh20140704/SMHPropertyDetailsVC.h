@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class SMHProperty;
 @interface SMHPropertyDetailsVC : UIViewController
+
+@property (strong, nonatomic) SMHProperty *property;
 
 @end

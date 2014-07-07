@@ -52,7 +52,7 @@
         <!--Property DetailsVC - <Property Name>-->
         <scene sceneID="NLF-7F-tff">
             <objects>
-                <viewController id="Q9d-d9-w87" customClass="SMHPropertyDetailsVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Q9d-d9-w87" customClass="SMHPropertyDetailsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="obm-De-8xp"/>
                         <viewControllerLayoutGuide type="bottom" id="5bn-9K-l4A"/>
@@ -61,24 +61,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7L-bZ-QJH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7L-bZ-QJH">
+                                <rect key="frame" x="0.0" y="287" width="320" height="281"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="TDM-4N-1wI"/>
+                                </constraints>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SMHPropertyPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="nb2-Vh-7nA">
+                                <rect key="frame" x="0.0" y="64" width="320" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="9SR-Bg-QfS"/>
+                                    <constraint firstAttribute="width" constant="320" id="p5e-S4-JCZ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="t7L-bZ-QJH" firstAttribute="top" secondItem="26c-Rd-pSa" secondAttribute="top" id="8vh-Jp-DIB"/>
-                            <constraint firstAttribute="trailing" secondItem="t7L-bZ-QJH" secondAttribute="trailing" id="NIh-Y4-whO"/>
-                            <constraint firstItem="t7L-bZ-QJH" firstAttribute="leading" secondItem="26c-Rd-pSa" secondAttribute="leading" id="eP2-VE-Ui5"/>
-                            <constraint firstAttribute="bottom" secondItem="t7L-bZ-QJH" secondAttribute="bottom" id="mdW-De-LYQ"/>
+                            <constraint firstItem="nb2-Vh-7nA" firstAttribute="leading" secondItem="26c-Rd-pSa" secondAttribute="leading" id="EP3-L1-HKw"/>
+                            <constraint firstAttribute="bottom" secondItem="t7L-bZ-QJH" secondAttribute="bottom" id="Fbl-Ph-R71"/>
+                            <constraint firstItem="t7L-bZ-QJH" firstAttribute="leading" secondItem="26c-Rd-pSa" secondAttribute="leading" id="RJ9-fm-772"/>
+                            <constraint firstItem="t7L-bZ-QJH" firstAttribute="top" secondItem="nb2-Vh-7nA" secondAttribute="bottom" constant="8" id="ZQU-Dt-cKP"/>
+                            <constraint firstItem="nb2-Vh-7nA" firstAttribute="top" secondItem="26c-Rd-pSa" secondAttribute="top" constant="64" id="lgb-Ce-Kz0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="&lt;Property Name>" id="ACK-Zb-7cF"/>
+                    <connections>
+                        <outlet property="propertyImage" destination="nb2-Vh-7nA" id="dir-R0-87l"/>
+                        <outlet property="propertyShortDesc" destination="t7L-bZ-QJH" id="daa-vo-Vew"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OuP-Ys-Y41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
