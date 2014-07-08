@@ -2,8 +2,8 @@
 //  smh20140704Tests.m
 //  smh20140704Tests
 //
-//  Created by Current User on 07/07/2014.
-//  Copyright (c) 2014 smh20140704. All rights reserved.
+//  Created by Shah Hussain on 07/07/2014.
+//  Copyright (c) 2014 Shah Hussain. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

@@ -2,8 +2,8 @@
 //  SMHDataController.m
 //  smh20140704
 //
-//  Created by Current User on 07/07/2014.
-//  Copyright (c) 2014 smh20140704. All rights reserved.
+//  Created by Shah Hussain on 07/07/2014.
+//  Copyright (c) 2014 Shah Hussain. All rights reserved.
 //
 
 #import "SMHAppDelegate.h"
@@ -105,7 +105,6 @@ NSString *const SourceURL = @"http://www.gingermcninja.com/hw_test/propertylocat
         NSLog(@"Error parsing JSON: %@", e);
     } else {
         for(NSDictionary *item in jsonDict[@"result"][@"Properties"]) {
-            NSLog(@"Item: %@", item);
             _currentProperty = [NSEntityDescription
                                 insertNewObjectForEntityForName:@"SMHProperty"
                                 inManagedObjectContext:_backgroundContext];
@@ -113,7 +112,7 @@ NSString *const SourceURL = @"http://www.gingermcninja.com/hw_test/propertylocat
             _currentProperty.imageWidth = item[@"images"][0][@"width"];
             _currentProperty.imageHeight = item[@"images"][0][@"height"];
             _currentProperty.imageURL = item[@"images"][0][@"url"];
-            _currentProperty.shortDesc = item[@"shortDescription"];
+            _currentProperty.shortDesc = [(NSString *)item[@"shortDescription"] stringByAppendingString:@"..."];
             [_result addObject:_currentProperty];
         }
     }
